@@ -1,11 +1,13 @@
+import classes from './Form.module.css';
+
 const Form  = (props) => {
     return (
-        <div>
-            <div>{props.firstname}</div>
-            <div>{props.lastname}</div>
-            <div>{props.phonenumber}</div>
-            <div>{props.message}</div>
-            <div>{props.role}</div>
+        <div className={classes.formContainer}>
+            <div>First name: {props.firstname}</div>
+            <div>Last name: {props.lastname}</div>
+            <div>Phonenumber: {props.phonenumber}</div>
+            <div>Message: {props.message}</div>
+            <div>Role: {props.role}</div>
         </div>
     );
 };
