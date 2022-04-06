@@ -25,7 +25,7 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <Form></Form>
+        <Form onChange={this.inputHandler}></Form>
         <View 
           firstname={this.state.firstname}
           lastname={this.state.lastname}

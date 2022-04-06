@@ -1,8 +1,9 @@
-import classes from './View.module.css';
+import React from "react";
+import style from './View.module.css';
 
 const View  = (props) => {
     return (
-        <div className={classes.viewContainer}>
+        <div className={style.viewContainer}>
             <h2>This is your input:</h2>
             <p>First name: {props.firstname}</p>
             <p>Last name: {props.lastname}</p>
