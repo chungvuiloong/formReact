@@ -1,8 +1,8 @@
 import React from "react";
 
-const Form = () => {
+const Form = (props) => {
     return (
-        <div className="inputContainer">
+        <form onChange={props.onChange} className="inputContainer">
             <div>First name <input type="text"    name="firstname" /></div>
             <div>Last name <input type="text"    name="lastname"/></div>
             <div>Phone number<input type="number"  name="phonenumber"/></div>
@@ -16,7 +16,7 @@ const Form = () => {
                 </select>
             </div>      
             <button type="button">Submit</button>
-      </div>
+      </form>
     )
 }
 
