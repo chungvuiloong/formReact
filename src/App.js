@@ -6,16 +6,28 @@ import React, { Component } from "react";
 
 class App extends Component {
   state = {
+    // firstname: "",
+    // lastname: "",
+    // phonenumber: "",
+    // message: "",
+    // role: "",
+
+    inputData:{
     firstname: "",
     lastname: "",
     phonenumber: "",
     message: "",
     role: "",
+    },
   };
 
+  // input handler and state
   inputHandler =(e) => {
+    // this.setState({
+    //   [e.target.name]: e.target.value});
     this.setState({
-      [e.target.name]: e.target.value});
+      inputData: {...this.state.inputData, [e.target.name]: e.target.value}
+    });
   }
 
   submitHandler = () => {
@@ -26,13 +38,15 @@ class App extends Component {
     return (
       <div className="App">
         <Form onChange={this.inputHandler}></Form>
-        <View 
-          firstname={this.state.firstname}
-          lastname={this.state.lastname}
-          phonenumber={this.state.phonenumber}
-          message={this.state.message}
-          role={this.state.role}
-        />
+        {/* <View 
+          firstname={this.state.inputData.firstname}
+          lastname={this.state.inputData.lastname}
+          phonenumber={this.state.inputData.phonenumber}
+          message={this.state.inputData.message}
+          role={this.state.inputData.role}
+        /> */}
+
+        <View {...this.state.inputData}/>
         
       </div>
     );
