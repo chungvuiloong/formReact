@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import View from './Components/View';
 import Form from './Components/Form';
+import Popup from './Components/Popup';
 import React, { Component } from "react";
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
     message: "",
     role: "",
     },
+    showPopup: false,
   };
 
   // input handler and state
@@ -30,14 +32,16 @@ class App extends Component {
     });
   }
 
-  submitHandler = () => {
-    console.log("Pressed submit");
+  popUpHandler = (e) => {
+    e.preventDefault();
+    this.setState({ showPopup: !this.state.showPopup });
   }
 
   render () {
     return (
       <div className="App">
-        <Form onChange={this.inputHandler}></Form>
+        <Form onChange={this.inputHandler} submit={this.popUpHandler}></Form>
+
         {/* <View 
           firstname={this.state.inputData.firstname}
           lastname={this.state.inputData.lastname}
@@ -47,6 +51,11 @@ class App extends Component {
         /> */}
 
         <View {...this.state.inputData}/>
+
+        {this.state.showPopup && 
+        (
+        <Popup close={this.closeHandler}{...this.state.inputData}/>)}
+        
         
       </div>
     );

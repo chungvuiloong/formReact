@@ -24,7 +24,7 @@ const Form = (props) => {
                     <option value="Sleeper">Sleeper</option>
                     <option value="Mugger">Mugger</option>
                 </select>      
-            <button type="button">Submit</button>
+            {/* <button type="button">Submit</button> */}
             <input type="submit" name="submit" id="submit"/>
       </form>
     )
